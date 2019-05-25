@@ -30,6 +30,7 @@ public:
 	void addStudyItem(const StudyItem& si);
 	void addStudyItem(const StudyItem& si, const int& num);
 	const std::map<StudyItem, int>& getRatingMap() const;
+	bool containsStudyItem(const std::string& siName)  const;
 };
 
 

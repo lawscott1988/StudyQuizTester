@@ -13,7 +13,7 @@ StudyItem StudyRating::getStudyItem(const std::string& siName) const{
 			return si.first;
 		}
 	}
-	return StudyItem{};
+	return StudyItem{"nullItem", Question{"nullItem"}, Answer{"nullItem"}};
 }
 
 void StudyRating::addStudyItem(const StudyItem& si) {
@@ -26,4 +26,13 @@ void StudyRating::addStudyItem(const StudyItem& si, const int& num) {
 
 const std::map<StudyItem, int>& StudyRating::getRatingMap() const {
 	return ratingMap;
+}
+
+bool StudyRating::containsStudyItem(const std::string& siName) const {
+	for(auto& si : ratingMap) {
+		if(si.first.getSiName() == siName) {
+			return true;
+		}
+	}
+	return false;
 }

@@ -82,12 +82,25 @@ int main()
 	assert(sr.getRatingMap().empty() == true);
 
 	//testing two other constructors work, testing getStudyItem works
-		//getStudyItem when no StudyItem is found currently returns
-		//a custom default StudyItem
-		//need it to throw exception or return a nullptr
 	assert(sr4.getStudyItem("OSI Test 3") == si3);
 
-	//testing that addStudyItem member function works
-	//assert(sr.getStudyItem("OSI Test 1") == si);
+	StudyRating srNewTest{};
+	StudyItem gSiReturnTester{"nullItem", Question{"nullItem"}, Answer{"nullItem"}};
+
+	//another test for getStudyItem to see if it returns StudyItem with nullItem fields if nothing is found
+	assert(srNewTest.getStudyItem("OSI Test Another") == gSiReturnTester);
+
+	StudyItem sIcontainsSiTest{"siTester", Question{"siTesterQ"}, Answer{"siTesterA"}};
+	StudyItem addSiTester1{"test1", Question{"test1"}, Answer{"test1"}};
+	StudyItem addSiTester2{"test2", Question{"test2"}, Answer{"test2"}};
+	StudyRating srContainsSiTest{sIcontainsSiTest, 0};
+	srContainsSiTest.addStudyItem(addSiTester1);
+	srContainsSiTest.addStudyItem(addSiTester2);
+
+	//test for containsStudyItem; test for addStudyItem
+	assert(srContainsSiTest.containsStudyItem("siTester") == true);
+	assert(srContainsSiTest.containsStudyItem("test1") == true);
+	assert(srContainsSiTest.containsStudyItem("test2") == true);
+
 }
 

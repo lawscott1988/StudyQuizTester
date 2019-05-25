@@ -21,14 +21,14 @@ public:
 		wrongAnswers(std::vector<std::string>{})
 	{}
 
-	StudyItem(const std::string& name, Question q, Answer a) :
+	StudyItem(const std::string& name, const Question& q, const Answer& a) :
 		siName(name),
 		question(q),
 		answer(a),
 		wrongAnswers(std::vector<std::string>{})
 	{}
 
-	StudyItem(const std::string name,Question q, Answer a, std::vector<std::string> wa) :
+	StudyItem(const std::string name, const Question& q, const Answer& a, std::vector<std::string> wa) :
 		siName(name),
 		question(q),
 		answer(a),
