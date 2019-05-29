@@ -13,6 +13,7 @@
 #include"question.h"
 #include"studyitem.h"
 #include"studyrating.h"
+#include"menu.h"
 
 int main()
 {
@@ -101,6 +102,13 @@ int main()
 	assert(srContainsSiTest.containsStudyItem("siTester") == true);
 	assert(srContainsSiTest.containsStudyItem("test1") == true);
 	assert(srContainsSiTest.containsStudyItem("test2") == true);
+
+	Menu mainMenu{};
+	//test menu items 1 and 2
+	assert(mainMenu.item1 == "Quick Quiz Practice");
+	assert(mainMenu.item2 == "Start Quiz Practice");
+
+	mainMenu.printMenuScreen();
 
 }
 
