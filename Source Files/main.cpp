@@ -108,7 +108,18 @@ int main()
 	assert(mainMenu.item1 == "Quick Quiz Practice");
 	assert(mainMenu.item2 == "Start Quiz Practice");
 
-	mainMenu.printMenuScreen();
+	StudyItem newSi1{};
+	Question question1{"q1"};
+	Answer answer1{"a1"};
+	std::vector<std::string> vector1 {"", ""};
+	StudyItem newSiFull{"newName", question1, answer1, vector1, 30};
+	newSi1.changeRating(20);
 
+	assert(newSi1.getRating() == 20);
+	assert(newSiFull.getSiName() == "newName");
+	assert(newSiFull.getQuestion() == "q1");
+	assert(newSiFull.getAnswer() == "a1");
+	assert(newSiFull.getWrongAnswers().size() == 2);
+	assert(newSiFull.getRating() == 30);
 }
 
