@@ -19,6 +19,7 @@ public:
 	StudyItemDataBase(const StudyItem& si) :
 		studyRatingList(si)
 	{}
+
 };
 
 
