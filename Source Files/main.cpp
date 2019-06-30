@@ -14,6 +14,7 @@
 #include"studyitem.h"
 #include"studyrating.h"
 #include"menu.h"
+#include"siDataBase.h"
 
 int main()
 {
@@ -111,7 +112,7 @@ int main()
 	StudyItem newSi1{};
 	Question question1{"q1"};
 	Answer answer1{"a1"};
-	std::vector<std::string> vector1 {"", ""};
+	std::vector<std::string> vector1 {"cheese", "sandwich"};
 	StudyItem newSiFull{"newName", question1, answer1, vector1, 30};
 	newSi1.changeRating(20);
 
@@ -121,5 +122,12 @@ int main()
 	assert(newSiFull.getAnswer() == "a1");
 	assert(newSiFull.getWrongAnswers().size() == 2);
 	assert(newSiFull.getRating() == 30);
+
+	siDataBase db1{newSiFull};
+	//db1.writeToFile();
+	siDataBase db2{};
+	//db1.writeToFile();
+	db2.readFromFile();
+
 }
 

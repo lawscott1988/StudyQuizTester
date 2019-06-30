@@ -9,6 +9,7 @@
 #define SOURCE_FILES_IFILEWRITERREADER_H_
 
 #include<fstream>
+#include<iostream>
 
 class IFileWriterReader {
 public:

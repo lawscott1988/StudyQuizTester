@@ -1,0 +1,2 @@
+EthernetCheckSumQ; What is another name for the Ethernet Frame checksum?; Cyclic Redundancy Check; {Transport Layer, Internet Protocol}; 0!
+TCP/IPQ; What does TCP stand for?; Transport Control Protocol; {Tight Canny Putty, Transistor Capacity Power}; 2!

@@ -9,17 +9,23 @@
 #define SOURCE_FILES_SIDATABASE_H_
 
 #include<vector>
+#include<algorithm>
 #include"studyitem.h"
+#include"IFileWriterReader.h"
 
-static class StudyItemDataBase {
+class siDataBase : public IFileWriterReader {
 	std::vector<StudyItem> studyRatingList;
-public:
-	StudyItemDataBase() = default;
 
-	StudyItemDataBase(const StudyItem& si) :
-		studyRatingList(si)
+
+public:
+	siDataBase() = default;
+
+	siDataBase(const StudyItem& si) :
+		studyRatingList(std::vector<StudyItem>{si})
 	{}
 
+	void writeToFile();
+	void readFromFile();
 };
 
 
